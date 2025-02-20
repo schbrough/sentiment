@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Enter a Docket Number</h1>
+    <input type="text" id="docketInput" placeholder="Docket Number">
+    <button onclick="generateImage()">Analyze</button>
+    <br><br>
+    <img id="resultImage" src="" alt="Sentiment Analysis Graph" style="display:none; width:600px;">
+
+    <script>
+        function generateImage() {
+            let docket = document.getElementById("docketInput").value.trim();
+            if (docket) {
+                let imageUrl = `https://raw.githubusercontent.com/schbrough/sentiment/main/${docket}_sentiment.png`;
+                document.getElementById("resultImage").src = imageUrl;
+                document.getElementById("resultImage").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+
